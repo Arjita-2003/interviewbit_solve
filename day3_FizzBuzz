@@ -1,0 +1,23 @@
+public class Solution {
+    public String[] fizzBuzz(int A) {
+        int i,j;
+        String[] s = new String[A];
+    
+        for(j=0;j<A;j++){
+            i = j+1;
+            if(i%3==0 && i%5==0){
+                s[j] = "FizzBuzz";
+            }
+            else if(i%5==0){
+                s[j] = "Buzz";
+            }
+            else if(i%3==0){
+                s[j] = "Fizz";
+            }
+            else{
+                s[j] = String.valueOf(i);
+            }
+        }
+        return s;
+    }  
+}
