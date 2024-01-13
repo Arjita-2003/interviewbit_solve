@@ -1,0 +1,23 @@
+public class Solution {
+    public String findDigitsInBinary(int A) {
+        int i=0;
+        String s = "";
+        String k = "";
+        int[] num = new int[50];
+        if(A==0){
+            s = String.valueOf(0);
+            return s;
+        }
+        while(A>0)
+        {
+            num[i++]=A%2;
+            A=A/2;
+        }
+        for(int j=i-1;j>=0;j--)
+        {
+            s = String.valueOf(num[j]);
+            k += s;
+        }
+        return k;
+    }
+}
