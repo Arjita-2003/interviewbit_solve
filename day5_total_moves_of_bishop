@@ -1,0 +1,12 @@
+public class Solution {
+    public int solve(int A, int B) {
+        
+        int TL = Math.min(A,B)-1;
+        int TR = Math.min(A,9-B)-1;
+        int BL = 8 - Math.max(A,9-B);
+        int BR = 8 - Math.max(A,B);
+         
+        int sum = (TL+TR+BL+BR);
+        return sum;
+    }
+}
