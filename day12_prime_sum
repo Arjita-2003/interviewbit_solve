@@ -1,0 +1,44 @@
+public class Solution {
+    public int[] primesum(int A) {
+      int [] result = new int[2];
+     result[0]=0;
+     result[1]=0;
+     
+     for(int i=2;i<=A/2;i++)
+     {
+         int x=i;
+         int j=0;
+         for(j=2;j<=x/2;j++)
+         {
+             if(x%j==0)
+             {
+                 break;
+             }
+         }
+         j--;
+         if(j==x/2)
+         {
+             int z=A-i;
+             int d=0;
+             for(d=2;d<=z/2;d++)
+             {
+                 if(z%d==0)
+                 {
+                     break;
+                 }
+                 
+             }
+             d--;
+             if(d==z/2)
+             {
+                 result[0]=i;
+                 result[1]=A-i;
+                 break;
+             }
+         }
+     }
+     return result;
+  
+
+    }
+}
