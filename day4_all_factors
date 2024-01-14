@@ -1,0 +1,28 @@
+public class Solution {
+    public int[] allFactors(int A) {
+      int i,j=0;
+      int[] num = new int[1000];
+      for(i=1;i<=Math.sqrt(A);i++)
+      {
+          if(A%i==0){
+              if(A/i==i){
+                  num[j]=i;
+                  j++;
+              }
+              else{
+                  num[j]=i;
+                  j++;
+                  num[j]=A/i;
+                  j++;
+              }
+          }
+      }
+      int[] arr = new int[j];
+      for(i=0;i<j;i++)
+      {
+          arr[i] = num[i];
+      }
+      Arrays.sort(arr);
+      return arr;
+    }
+}
