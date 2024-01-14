@@ -1,0 +1,26 @@
+public class Solution {
+    public int isPalindrome(int A) {
+        int var = A;
+        int reverse = 0;
+        if(A<0){
+            return 0;
+        }
+        else if(A==0){
+            return 1;
+        }
+        
+        else{
+            while(A!=0){
+                int num = A%10;
+                reverse = reverse*10 + num;
+                A=A/10;
+            }
+        }
+                    
+        if(var==reverse){
+            return 1;
+        }
+        else return 0;
+        
+    }
+}
