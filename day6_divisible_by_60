@@ -1,0 +1,74 @@
+public class Solution {
+    public int divisibleBy60(int[] A) {
+         
+        boolean zero_exist = false;
+        boolean multiple_of_2 = false;
+        int sum = 0;
+        int index_of_zero = 0;
+        boolean more_zero = false;
+        int size = A.length;
+        if(A[0]==0){
+            return 1;
+        }
+     
+        for (int i = 0; i < size; i++) {
+           int val = A[i];
+            // Condition if more than one
+            // zero exist
+             if (val == 0) {
+                zero_exist = true;
+                index_of_zero = i;
+            }
+            if (zero_exist == true)
+                more_zero = true;
+     
+            // Condition if zero_exist
+           
+     
+            // Computing total sum of all digits
+            sum += val;
+        }
+     
+        // Condition if zero does not exist or
+        // the sum is not divisible by 3
+        if (zero_exist == false || sum % 3 != 0) {
+            return 0;
+        }
+     
+        for (int i = 0; i < size; i++) {
+            int val = A[i];
+     
+            // Condition to find a digit that is
+            // multiple of 2 other than one zero
+            if (val % 2 == 0 && i != index_of_zero)
+                multiple_of_2 = true;
+        }
+     
+        // Condition if multiple of 2
+        // do not exist
+        if (multiple_of_2 == false) {
+            return 0;
+        }
+     
+        int last_val = (size - 1);
+        int second_last_val = (size - 2);
+     
+        // Condition for zero swaps
+        // means the number is already
+        // is divisible by 60
+        if (last_val == 0 && second_last_val % 2 == 0)
+            return 0;
+     
+        // Condition for only one swap
+        else if ((last_val == 0 && second_last_val % 2 != 0) || (last_val % 2 == 0
+                     && second_last_val == 0))
+            return 1;
+     
+        else if (more_zero == true && (last_val == 0 && second_last_val % 2 != 0))
+            return 1 ;
+     
+        // Otherwise 2 swaps required
+        else
+            return 1;
+    }
+}
