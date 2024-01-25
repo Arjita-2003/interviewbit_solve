@@ -1,0 +1,9 @@
+public class Solution {
+    public int[] solve(int[] A) {
+     //   int size = A.length;
+      //  int[] B = new int[size];
+     
+        Arrays.sort(A);
+        return A;
+    }
+}
