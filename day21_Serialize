@@ -1,0 +1,13 @@
+public class Solution {
+    public String serialize(String[] A) {
+        int size = A.length;
+        String s = "";
+        String k = "";
+        for(int i=0;i<size;i++){
+            int n = A[i].length();
+            s = A[i] + n + '~';
+            k += s;
+        }
+        return k;
+    }
+}
