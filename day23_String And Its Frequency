@@ -1,0 +1,27 @@
+public class Solution {
+    //static final int SIZE = 26;
+    public String solve(String A) {
+   
+        int n = A.length();
+        int f;
+        String result = "";
+        String ans = "";
+        int[] freq = new int[26];
+ 
+        for (int i = 0; i < n; i++)
+            freq[A.charAt(i) - 'a']++;
+ 
+        for (int i = 0; i < n; i++) {
+ 
+            char c = A.charAt(i);
+            f = freq[c - 'a'];
+            if (f > 0) {
+                String s = Integer.toString(f);
+                result = c + s;
+                ans += result;
+                freq[c - 'a'] = 0;
+            }
+        } 
+        return ans;
+    }
+}
