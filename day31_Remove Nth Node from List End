@@ -1,0 +1,27 @@
+import java.util.LinkedList;
+import java.io.*;
+/**
+ * Definition for singly-linked list.
+ * class ListNode {
+ *     public int val;
+ *     public ListNode next;
+ *     ListNode(int x) { val = x; next = null; }
+ * }
+ */
+public class Solution {
+    public ListNode removeNthFromEnd(ListNode A, int B) {
+       int count = Node(A,B);
+       if(count <= B) return A.next;
+       return A;
+    }
+    
+    public int Node(ListNode A, int B){
+        if(A==null) return 0;
+        int count = Node(A.next,B) + 1;
+        if(count==B+1){
+            if(A.next.next==null) A.next=null;
+            else A.next  = A.next.next;
+        }
+        return count;
+    }
+}
