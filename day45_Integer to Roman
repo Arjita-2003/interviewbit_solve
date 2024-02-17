@@ -1,0 +1,20 @@
+public class Solution {
+    public String intToRoman(int A) {
+        
+        String ans = "";
+        int[] arr = {1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1};
+        String[] roman = {"M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"};
+        
+        int n = A;
+        for(int i = 0; i < arr.length; i++) {
+            int rem = n / arr[i];
+            n = n % arr[i];
+            while(rem > 0) {
+                ans += roman[i];
+                rem--;
+            }
+        }
+        return ans;
+    }
+}
+
