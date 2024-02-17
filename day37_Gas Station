@@ -1,0 +1,23 @@
+public class Solution {
+    // DO NOT MODIFY THE ARGUMENTS WITH "final" PREFIX. IT IS READ ONLY
+    public int canCompleteCircuit(final int[] A, final int[] B) {
+        int petrol = 0;
+        int index = 0;
+        int total = 0;
+        for(int i=0;i<A.length;i++){
+            petrol = petrol + A[i] - B[i];
+            total = total + A[i] - B[i];
+            
+            if(petrol<0){
+                petrol = 0;
+                index = i+1;
+            }
+        }
+        if(total<0){
+            return -1;
+        }
+        else{
+            return index;
+        }
+    }
+}
