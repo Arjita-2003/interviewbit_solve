@@ -1,0 +1,19 @@
+public class Solution {
+    public int solve(int[] A) {
+         int n = A.length;
+        return power(n) - 1;
+    }
+    public int power(int n) {
+        if(n==0)
+            return 1;
+        long res = power(n/2);
+        if(n%2==0){
+            res = (res*res)%1000000007;
+        } 
+        else{
+            res = (((res*res)%1000000007)*2)%1000000007;
+        }
+        return (int)res;
+    }
+}
+
