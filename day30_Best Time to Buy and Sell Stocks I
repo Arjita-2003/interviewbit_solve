@@ -1,0 +1,24 @@
+public class Solution {
+    // DO NOT MODIFY THE ARGUMENTS WITH "final" PREFIX. IT IS READ ONLY
+    public int maxProfit(final int[] A) {
+        int size = A.length;       
+        if(size==0){
+            return 0;
+        }
+        int min = A[0];
+        int diff = A[0]-min;
+        int profit = diff;
+
+        for(int i=1;i<size;i++){
+            diff = A[i] - min;
+            if(diff>profit){
+                profit = diff;
+            }
+            if(A[i]<min){
+                min = A[i];
+            }
+        }
+
+        return profit;
+   }
+}
