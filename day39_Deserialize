@@ -1,0 +1,23 @@
+public class Solution {
+    public String[] deserialize(String A) {
+        ArrayList<String>list = new ArrayList<>();
+        int i = -1;
+        int j = 0;
+        while(j < A.length()){
+            while(A.charAt(j) <= 122 && A.charAt(j) >= 97){
+                j++;
+            }
+            list.add(A.substring(i+1,j));
+            while(j < A.length() && A.charAt(j) != '~'){
+                j++;
+            }
+            i = j++;
+            
+        }
+        String[] ans = new String[list.size()];
+        for(i=0;i<list.size();i++){
+            ans[i] = list.get(i);
+        }
+        return ans;
+    }
+}
