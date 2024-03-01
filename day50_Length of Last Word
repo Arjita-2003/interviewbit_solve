@@ -1,0 +1,13 @@
+public class Solution {
+    // DO NOT MODIFY THE ARGUMENTS WITH "final" PREFIX. IT IS READ ONLY
+    public int lengthOfLastWord(final String A) {
+        String[] arr = A.split(" ");
+        int len = arr.length;
+        int i = len-1;
+        if(len==0){
+            return 0;
+        }
+        int count = arr[i].length();
+        return count;
+    }
+}
