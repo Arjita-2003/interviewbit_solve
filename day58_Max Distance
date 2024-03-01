@@ -1,0 +1,24 @@
+public class Solution {
+    // DO NOT MODIFY THE LIST. IT IS READ ONLY
+    public int maximumGap(final List<Integer> A) {
+        int n = A.size();
+        int[] Max = new int[n];
+        Max[n-1] = A.get(n-1);
+        for(int i=n-2;i>=0;i--){
+            Max[i] = Math.max(Max[i+1] , A.get(i));
+        }
+            
+        int dis = Integer.MIN_VALUE;
+        int i = 0, j = 0;
+        while(i<n && j<n){
+            if(Max[j] >= A.get(i)){
+                dis = Math.max(dis,j-i);
+                j++;
+            }
+            else {
+                i++;
+            }
+        }    
+        return dis;
+    }
+}
