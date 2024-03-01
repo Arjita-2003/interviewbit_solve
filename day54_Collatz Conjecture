@@ -1,0 +1,16 @@
+public class Solution {
+    public long solve(int A, int B) {
+        long num = 0;
+        long n = A;
+        for(int i=0;i<B-1;i++){
+            if(n%2==0){
+                num = n/2;
+            }
+            else{
+                num = 3*n+1;
+            }
+            n = num;
+        }
+        return num;
+    }
+}
