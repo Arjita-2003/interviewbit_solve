@@ -1,0 +1,25 @@
+public class Solution {
+    // DO NOT MODIFY THE LIST. IT IS READ ONLY
+    public ArrayList<Integer> intersect(final List<Integer> A, final List<Integer> B) {
+        ArrayList<Integer> arr = new ArrayList<>();
+        int a = 0;
+        int b = 0;
+        while(a < A.size() && b < B.size()){
+            int num1 = A.get(a);
+            int num2 = B.get(b);
+           
+            if(num1 < num2){
+                a++;
+            }
+            else if(num1 > num2){
+                b++;
+            }
+            else{
+                arr.add(num1);
+                a++;
+                b++;
+            }
+        }
+        return arr;
+    }
+}
