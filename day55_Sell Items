@@ -1,0 +1,13 @@
+public class Solution {
+    public int solve(int A, int B) {
+        int week = A * 5;
+        int total = B/week;
+        int rem = B%week;
+       
+        if(rem>0){
+            total++;
+        }
+       
+        return total;
+    }
+}
