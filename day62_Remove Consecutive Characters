@@ -1,0 +1,23 @@
+public class Solution {
+    public String solve(String A, int B) {
+        int i=0, j=0;
+        A = A + '$';
+        String ans = "";
+        int count = 0;
+        while(j < A.length()){
+            if(A.charAt(i) == A.charAt(j) ){
+                count++;
+                j++;
+            }
+            else{
+                if(count != B){
+                    ans += A.substring(i,j);
+                }
+                i=j;
+                count=0;
+            }
+           
+        }
+        return ans;
+    }
+}
