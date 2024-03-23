@@ -1,0 +1,39 @@
+public class Solution {
+    // DO NOT MODIFY THE ARGUMENTS WITH "final" PREFIX. IT IS READ ONLY
+    public int[] spiralOrder(final int[][] A) {
+        
+        int m = A.length;
+        int n = A[0].length;
+        int [] arr = new int[m*n];
+        int k = 0;
+        int total = 0;
+        int tr=0,br=m-1,lc=0,rc=n-1;
+        while(total<m*n){
+        
+        for(int j=lc;j<=rc && total<m*n;j++){
+            arr[k++] = A[tr][j];
+            total++;
+        }
+        tr++;
+        
+        for(int i=tr;i<=br && total<m*n;i++){
+            arr[k++] = A[i][rc];
+            total++;
+        }
+        rc--;
+        
+        for(int j=rc;j>=lc && total<m*n;j--){
+            arr[k++] = A[br][j];
+            total++;
+        }
+        br--;
+        
+        for(int i=br;i>=tr && total<m*n;i--){
+            arr[k++] = A[i][lc];
+            total++;
+        }
+        lc++;
+        }
+        return arr;
+    }
+}
