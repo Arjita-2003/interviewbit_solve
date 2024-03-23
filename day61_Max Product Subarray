@@ -1,0 +1,20 @@
+public class Solution {
+    // DO NOT MODIFY THE LIST. IT IS READ ONLY
+    public int maxProduct(final List<Integer> A) {
+        int Min = A.get(0);
+        int Max = A.get(0);
+        int mini = A.get(0);
+        int maxi = A.get(0);
+        int ans = Max;
+        for(int i=1;i<A.size();i++){
+            
+            Min = Math.min(mini*A.get(i), Math.min(maxi*A.get(i),A.get(i)));
+            Max = Math.max(maxi*A.get(i), Math.max(mini*A.get(i),A.get(i)));
+            mini = Min;
+            maxi = Max;
+            ans = Math.max(ans,Max);
+        
+        }
+        return ans;
+    }
+}
