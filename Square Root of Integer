@@ -1,0 +1,20 @@
+public class Solution {
+	public int sqrt(int A) {
+	    long low = 1;
+	    long high = A;
+	    while (low <= high) {
+	        long mid = (high + low) / 2;
+	        if (mid*mid == A) {
+	            return (int) mid;
+	        }
+	        if (mid*mid > A) {
+	            high = mid - 1;
+	        } 
+            else {
+	            low = mid + 1;
+	        }
+	    }
+	    return (int) high;
+	}
+}
+
