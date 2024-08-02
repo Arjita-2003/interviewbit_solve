@@ -1,0 +1,41 @@
+public class Solution {
+	// DO NOT MODIFY THE LIST
+	public int findMin(final List<Integer> A) {
+	    
+	    int mid;
+        int end = A.size();
+        int start = 0;
+	    int n = A.size();
+	    int steps = end - start + 1;
+	    int num, prev, next;
+	    int last, first; 
+	    
+	    first = A.get(0);
+	    last = A.get(n - 1);
+	    
+	    while (steps > 0) {
+	        
+	        mid = (start + end) / 2;
+	        
+	        num = A.get(mid);
+	        next = A.get((mid + 1) % n);
+	        prev = A.get((mid - 1 + n) % n);
+	        
+	        if (num < prev && num < next)
+	            return num;
+	            
+	       if (num > first && num > last)
+	            start = mid + 1;
+	            
+	        else
+	            end = mid - 1;
+	        
+	        steps /= 2;
+	        
+	    }
+	    
+	    return A.get(0);
+	    
+	}
+	
+}
