@@ -1,0 +1,15 @@
+public class Solution {
+    public int[] solve(int[] A) {
+        int st = 0, end = 0;
+        while(end < A.length) {
+            if(A[end] != 0) {
+                int temp = A[end];
+                A[end] = A[st];
+                A[st] = temp;
+                st++;
+            }
+            end++;
+        }
+        return A;
+    }
+}
