@@ -1,0 +1,12 @@
+public class Solution {
+    public long solve(int A, int B) {
+        int a = A;
+        int b = B;
+        while(A!=B){
+            if(A>B) A = A-B;
+            else    B = B-A;
+        }
+        long ans = (long)a*b/A;
+        return ans;
+    }
+}
