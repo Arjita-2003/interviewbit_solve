@@ -1,0 +1,18 @@
+public class Solution {
+	public int removeElement(ArrayList<Integer> a, int b) {
+         int i=0;
+         int j=0;
+        while(j<a.size()){
+            int k = a.get(j);
+            if(k==b){
+                j++;
+            }
+            else{
+                a.set(i,k);
+                i++;
+                j++;
+            }
+        }
+        return i;
+	}
+}
