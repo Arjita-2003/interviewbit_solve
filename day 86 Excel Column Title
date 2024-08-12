@@ -1,0 +1,21 @@
+public class Solution {
+	public String convertToTitle(int A) {
+	    char [] arr = new char[26];
+	    for (int i=0;i<26;i++){
+            arr[i] = (char)('A' + i);
+        }
+    
+	    int num = 26;
+	    int k;
+	    String ans = "";
+	   
+	    while(A>0){
+	        k = (A - 1 + num) % num;
+	        A = (A - 1) / num;
+	        ans = arr[k] + ans;
+	    }
+	   
+	    return ans;
+	    
+	}
+}
