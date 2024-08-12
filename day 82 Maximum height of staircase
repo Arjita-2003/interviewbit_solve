@@ -1,0 +1,17 @@
+public class Solution {
+    public int solve(int A) {
+        int step = 0;
+        int count = 0;
+    
+        while (step <= A) {
+            count++;
+            step += count;
+        }
+    
+        if (step > A) {
+            count--;
+        }
+    
+        return count;
+    }
+}
